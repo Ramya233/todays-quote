@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wise Human</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    
+    <video autoplay muted loop id="video-background">
+      <!-- <source src="../public/vd-1.mp4" type="video/mp4"> -->
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+      <div class="quote">
+        <h1>Quote of the day</h1>
+        <% if(data.responseQuote){ %>
+        <div class="quote-container">
+           <p><%= data.responseQuote %></p>
+          </div>
+          <% }else { %>
+            <p><%= data.firstQuote %></p>
+          <% } %>
+          <form action="/getRandomQuote" method="POST">
+            <label for="quote">
+              <button id="quote" type="submit">Random Quote</button>
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
